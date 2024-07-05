@@ -1,4 +1,5 @@
 import AppNavbar from "./components/AppNavbar"
+import ImageCards from "./components/ImageCards"
 
 function App() {
   
@@ -6,7 +7,7 @@ function App() {
    <>
 
  <AppNavbar/>
-
+<ImageCards/>
    </>
   )
 }

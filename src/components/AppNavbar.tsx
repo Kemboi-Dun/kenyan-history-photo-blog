@@ -10,7 +10,7 @@ import {
 const AppNavbar = () => {
   return (
     <div>
-      <Navbar className="w-[90%] bg-default-200 flex align-center m-auto mt-2 rounded-md py-1">
+      <Navbar className="w-[90%] bg-default-200 flex align-center m-auto my-2 rounded-md py-1">
         <NavbarBrand>
           <Image
           width={100}
