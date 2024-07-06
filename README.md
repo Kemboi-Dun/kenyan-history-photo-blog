@@ -1,3 +1,43 @@
+# Kenyan-History-Photo-Blog
+
+> [!NOTE]
+> Data displayed are fetched from a different site.
+> [Data source page](https://traveldiarieskenya.wordpress.com/2014/10/03/a-look-at-kenya-through-the-years-pictureblog-1914-1990s/comment-page-1/)
+### Home page
+![Screenshot from 2024-07-06 13-09-23](https://github.com/Kemboi-Dun/kenyan-history-photo-blog/assets/86706504/58ea0413-ec01-4ee3-bbf1-6077cf862207)
+
+### Detailed view
+![image](https://github.com/Kemboi-Dun/kenyan-history-photo-blog/assets/86706504/65462aec-f1b4-48f9-a47c-e687307227fb)
+
+## Backend Setup
+```
+git clone git@github.com:Kemboi-Dun/kenyan-history-photo-blog.git
+```
+```
+cd travel_diaries_kenya_backend
+```
+```pip install fastapi uvicorn python-multipart requests beautifulsoup4 ``` or ``` pip install -r requirements.txt ```
+```
+fastapi dev Travel-diaries.py
+```
+
+#### Terminal Output:
+![image](https://github.com/Kemboi-Dun/kenyan-history-photo-blog/assets/86706504/671dca3c-c1be-4898-9e88-fb51a1c92b0b)
+
+## Frontend Setup
+```
+git clone git@github.com:Kemboi-Dun/kenyan-history-photo-blog.git
+```
+```
+npm install
+```
+```
+npm run dev
+```
+#### Terminal Output:
+![image](https://github.com/Kemboi-Dun/kenyan-history-photo-blog/assets/86706504/356b7f13-b70b-4b9f-a5ac-12f3469ab233)
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
