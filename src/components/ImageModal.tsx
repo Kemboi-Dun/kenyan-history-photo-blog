@@ -6,7 +6,6 @@ import {
   ModalContent,
   ModalFooter,
   ModalHeader,
-  useDisclosure,
 } from "@nextui-org/react";
 import { image_type } from "./ImageCards";
 
@@ -51,7 +50,6 @@ const ImageModal = (props: image_modal_interface) => {
                 <Button color="danger" variant="light" onPress={onClose}>
                   Close
                 </Button>
-                
               </ModalFooter>
             </>
           )}

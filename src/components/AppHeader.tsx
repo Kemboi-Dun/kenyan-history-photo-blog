@@ -17,7 +17,7 @@ const AppHeader = () => {
     const url = "http://127.0.0.1:8000/get_header/";
     try {
       const response = await axios.get(url);
-      console.log(response.data);
+
       set_header_data(response.data);
     } catch (error) {
       console.error(error);

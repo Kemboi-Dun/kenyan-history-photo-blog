@@ -32,48 +32,56 @@ export default function ImageCards() {
     const url = "http://127.0.0.1:8000/get_images/";
     try {
       const response = await axios.get(url);
-      console.log(response.data);
+
       set_image_data(response.data);
     } catch (error) {
       console.error(error);
     }
   };
 
+  const classnames = [
+    "col-span-12 sm:col-span-5 h-[auto] cursor-pointer",
+    "col-span-12 sm:col-span-7 h-[auto] cursor-pointer",
+    "col-span-12 sm:col-span-4 h-[auto] cursor-pointer",
+  ];
+
   useEffect(() => {
     get_images_data();
   }, []);
 
   return (
-    <div className="max-w-[90%] gap-2 grid grid-cols-12 grid-rows-2 px-8 m-auto my-4">
-      {image_data.map((image_card: image_type) => (
-        <Card
-          isFooterBlurred
-          className="col-span-12 sm:col-span-4 h-[300px] cursor-pointer"
-          key={image_card.img_src}
-          radius="sm"
-        >
-          <Image
-            removeWrapper
-            alt={image_card.img_alt}
-            className="z-0 w-full h-full object-cover"
-            src={image_card.img_src}
-            onClick={() => {
-              set_image_info(image_card);
-              onOpen();
-              
-            }}
-          />
-          {image_card.img_title && (
-            <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between ">
-              <div className="flex flex-col justify-start items-start ">
-                <h4 className="text-default-800 font-bold text-large">
-                  {image_card.img_title}
-                </h4>
-              </div>
-            </CardFooter>
-          )}
-        </Card>
-      ))}
+    <div className="max-w-[90%] gap-4 grid grid-cols-12 grid-rows-2 px-8 m-auto my-4">
+      {image_data.map((image_card: image_type, index) => {
+        const className = classnames[index % classnames.length];
+        return (
+          <Card
+            isFooterBlurred
+            className={className}
+            key={image_card.img_src}
+            radius="sm"
+          >
+            <Image
+              removeWrapper
+              alt={image_card.img_alt}
+              className="z-0 w-full h-full object-cover"
+              src={image_card.img_src}
+              onClick={() => {
+                set_image_info(image_card);
+                onOpen();
+              }}
+            />
+            {image_card.img_title && (
+              <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between ">
+                <div className="flex flex-col justify-start items-start ">
+                  <h4 className="text-default-800 font-bold text-large">
+                    {image_card.img_title}
+                  </h4>
+                </div>
+              </CardFooter>
+            )}
+          </Card>
+        );
+      })}
 
       <ImageModal image_info={image_info} isOpen={isOpen} onClose={onClose} />
     </div>
