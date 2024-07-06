@@ -50,6 +50,7 @@ export default function ImageCards() {
           isFooterBlurred
           className="col-span-12 sm:col-span-4 h-[300px] cursor-pointer"
           key={image_card.img_src}
+          radius="sm"
         >
           <Image
             removeWrapper
@@ -59,7 +60,7 @@ export default function ImageCards() {
             onClick={() => {
               set_image_info(image_card);
               onOpen();
-              console.log("Test");
+              
             }}
           />
           {image_card.img_title && (
