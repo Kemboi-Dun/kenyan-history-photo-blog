@@ -27,6 +27,7 @@ const ImageModal = (props: image_modal_interface) => {
         isKeyboardDismissDisabled={false}
         backdrop="blur"
         size="xl"
+        placement="center"
       >
         <ModalContent>
           {(onClose) => (
@@ -36,8 +37,8 @@ const ImageModal = (props: image_modal_interface) => {
               </ModalHeader>
               <ModalBody>
                 <Image
-                  width="w-[100%]"
-                  height="w-auto"
+                  width={1000}
+                  height={1000}
                   src={image_info.img_src}
                   alt={image_info.img_alt}
                   className="w-full max-h-[50%]"

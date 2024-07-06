@@ -28,19 +28,22 @@ const AppHeader = () => {
   }, []);
 
   return (
-    <div className="flex justify-end align-end gap-2 max-w-[90%] m-auto max-h-[50vh] h-[50vh] relative my-4 ">
+    <header className="flex justify-end align-end gap-2 max-w-[90%] m-auto max-h-[70vh]  h-auto relative my-6 lg:flex-nowrap flex-wrap flex-col-reverse lg:flex-row">
+      <span className="lg:max-w-[40%] flex flex-col align-start justify-end w-full gap-2">
+        <h2 className="font-semibold text-2xl">{header_data.title}</h2>
+        <p className="text-start text-sm lg:text-lg">
+          {header_data.description}
+        </p>
+      </span>
       <Image
-        width="w-[100%]"
-        height="h-[100%]"
+        width={700}
+        height={800}
         src={header_data.header_image}
         alt={header_data.description}
-        className="w-screen h-full "
+        // className=" col-span-12 sm:col-span-5 "
+        radius="sm"
       />
-      <span className="h-full  flex  flex-col justify-end  gap-4 text-end aling-center">
-        <h2 className="font-semibold text-2xl">{header_data.title}</h2>
-        <p className="text-start">{header_data.description}</p>
-      </span>
-    </div>
+    </header>
   );
 };
 

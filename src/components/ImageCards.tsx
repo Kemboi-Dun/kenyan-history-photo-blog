@@ -40,9 +40,9 @@ export default function ImageCards() {
   };
 
   const classnames = [
-    "col-span-12 sm:col-span-5 h-[auto] cursor-pointer",
-    "col-span-12 sm:col-span-7 h-[auto] cursor-pointer",
-    "col-span-12 sm:col-span-4 h-[auto] cursor-pointer",
+    "col-span-12 sm:col-span-12 md:col-span-5 h-[300px] cursor-pointer",
+    "col-span-12 md:col-span-7 sm:col-span-12 h-[300px] cursor-pointer",
+    "col-span-12 md:col-span-4 sm:col-span-12 h-[300px] cursor-pointer",
   ];
 
   useEffect(() => {
@@ -50,6 +50,7 @@ export default function ImageCards() {
   }, []);
 
   return (
+    
     <div className="max-w-[90%] gap-4 grid grid-cols-12 grid-rows-2 px-8 m-auto my-4">
       {image_data.map((image_card: image_type, index) => {
         const className = classnames[index % classnames.length];
@@ -59,6 +60,7 @@ export default function ImageCards() {
             className={className}
             key={image_card.img_src}
             radius="sm"
+            shadow="md"
           >
             <Image
               removeWrapper
@@ -73,7 +75,7 @@ export default function ImageCards() {
             {image_card.img_title && (
               <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between ">
                 <div className="flex flex-col justify-start items-start ">
-                  <h4 className="text-default-800 font-bold text-large">
+                  <h4 className="text-default-800 font-bold md:font-medium lg:text-large text-sm">
                     {image_card.img_title}
                   </h4>
                 </div>

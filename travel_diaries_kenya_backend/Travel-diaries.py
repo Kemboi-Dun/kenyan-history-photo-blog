@@ -49,7 +49,7 @@ def extract_gallery_images(soup):
             "img_title":img_title,
             "img_src":img_src,
             "img_alt":img_alt,
-            "card_size":5
+          
         }
         images.append(image_data)
     return images
